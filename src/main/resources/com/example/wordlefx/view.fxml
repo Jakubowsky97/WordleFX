@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #121213;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordlefx.Controller">
+    <children>
+        <Label alignment="CENTER" layoutX="20.0" layoutY="115.0" prefHeight="91.0" prefWidth="460.0" text="WordleFX" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="80.0" />
+            </font>
+        </Label>
+        <Button fx:id="playBtn" layoutX="20.0" layoutY="536.0" mnemonicParsing="false" onAction="#switchScene" prefHeight="98.0" prefWidth="220.0" style="-fx-background-color: #2d6620;" text="Graj" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="48.0" />
+            </font>
+        </Button>
+        <Button fx:id="exitBtn" layoutX="260.0" layoutY="536.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="220.0" style="-fx-background-color: #8a0404;" text="Wyjdź" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="48.0" />
+            </font>
+        </Button>
+    </children>
+</Pane>
