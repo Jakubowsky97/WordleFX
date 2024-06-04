@@ -6,9 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GameController {
 
@@ -40,12 +38,12 @@ public class GameController {
 
     private TextField[][] fields;
     private List<String> wordList;
-    RandomWord randomWordGenerator;
+    private RandomWord randomWordGenerator;
     @FXML
     private Label lblInfo;
     @FXML
     private Button reloadBtn;
-    String randomWord;
+    private String randomWord;
 
     @FXML
     public void initialize() {
@@ -67,28 +65,27 @@ public class GameController {
             e.printStackTrace();
         }
         randomWord = randomWordGenerator.getRandomWord();
+        System.out.println(randomWord);
 
         for (int row = 0; row < fields.length; row++) {
             for (int col = 0; col < fields[row].length; col++) {
                 if (row != 0) {
                     fields[row][col].setDisable(true);
                 }
-                addTextFieldListener(fields[row][col], randomWord);
+                addTextFieldListener(fields[row][col]);
             }
         }
 
         reloadBtn.setOnAction(event -> {
-            System.exit(1);
-            //resetGame();
-             }
-        );
+            resetGame();
+        });
     }
 
-    private void addTextFieldListener(TextField textField, String randomWord) {
+    private void addTextFieldListener(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
             handleTextChange(textField, newValue);
             if (!newValue.isEmpty()) {
-                focusNextField(textField, randomWord);
+                focusNextField(textField);
             }
         });
     }
@@ -102,7 +99,7 @@ public class GameController {
         }
     }
 
-    private void focusNextField(TextField currentField, String randomWord) {
+    private void focusNextField(TextField currentField) {
         for (int row = 0; row < fields.length; row++) {
             boolean rowCompleted = true;
             for (int col = 0; col < fields[row].length; col++) {
@@ -112,7 +109,7 @@ public class GameController {
                         fields[row][col + 1].requestFocus();
                     } else if (row < fields.length - 1) {
                         fields[row + 1][0].setDisable(false);
-                        checkWord(row, randomWord);
+                        checkWord(row);
                         fields[row + 1][0].requestFocus();
                     }
                 }
@@ -121,17 +118,18 @@ public class GameController {
                 }
             }
             if (rowCompleted) {
-                checkWord(row, randomWord);
+                checkWord(row);
             }
         }
     }
 
-    private void checkWord(int row, String randomWord) {
+    private void checkWord(int row) {
         StringBuilder wordBuilder = new StringBuilder();
         for (int col = 0; col < fields[row].length; col++) {
             wordBuilder.append(fields[row][col].getText());
         }
         String word = wordBuilder.toString().toLowerCase();
+        System.out.println("Wylosowane słowo to:" + randomWord);
 
         if (!wordList.contains(word)) {
             lblInfo.setText("Nie ma takiego słowa!");
@@ -204,11 +202,9 @@ public class GameController {
         }
     }
 
-
     private void resetGame() {
         lblInfo.setText("");
         randomWord = randomWordGenerator.getRandomWord();
-        System.out.println(randomWord);
         for (int row = 0; row < fields.length; row++) {
             for (int col = 0; col < fields[row].length; col++) {
                 fields[row][col].setText("");
