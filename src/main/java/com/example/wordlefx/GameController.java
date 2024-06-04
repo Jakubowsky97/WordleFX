@@ -59,7 +59,7 @@ public class GameController {
 
         WordLoader wordLoader = new WordLoader();
         try {
-            wordList = wordLoader.loadWordsFromFile("C:\\Users\\jakub\\IdeaProjects\\WordleFX\\src\\main\\resources\\com\\example\\wordlefx\\sgb-words.txt");
+            wordList = wordLoader.loadWordsFromFile("src\\main\\resources\\com\\example\\wordlefx\\sgb-words.txt");
             randomWordGenerator = new RandomWord(wordList);
         } catch (IOException e) {
             e.printStackTrace();

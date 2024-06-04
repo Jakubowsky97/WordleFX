@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #121213;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordlefx.GameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="500.0" style="-fx-background-color: #121213;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordlefx.GameController">
     <children>
         <GridPane fx:id="gridPane" layoutX="29.0" layoutY="106.0" prefHeight="419.0" prefWidth="443.0">
             <columnConstraints>
@@ -187,7 +187,7 @@
             <Font name="Calibri Bold" size="21.0" />
          </font>
       </Label>
-      <Button fx:id="reloadBtn" layoutX="100.0" layoutY="572.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="301.0" style="-fx-background-color: #8a0404;" text="Wyjdź" textFill="WHITE">
+      <Button fx:id="reloadBtn" layoutX="97.0" layoutY="577.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="301.0" style="-fx-background-color: #8a0404;" text="Reset" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="48.0" />
          </font>
