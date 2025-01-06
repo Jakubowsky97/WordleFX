@@ -17,19 +17,3 @@ WordleFX is an implementation of the popular **Wordle** game built using **JavaF
 
 - Java 11 or higher.
 - Maven (optional, for building the project).
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Jakubowsky97/WordleFX.git
-```
-2. Navigate to the project directory:
-   ```bash
-cd WordleFX
-```
-
-3. Compile and run the project:
-   ```bash
-mvn clean javafx:run
-```
